@@ -54,13 +54,13 @@ public class UserServiceTest {
         users.add(adam);
 
 
-        List<User> users1 = new ArrayList<User>();
-        User admin1 = new User(1, "admin", "admin");
-        User adam1 = new User(2, "adam", "admin");
-        users1.add(admin);
-        users1.add(adam);
+//        List<User> users1 = new ArrayList<User>();
+//        User admin1 = new User(1, "admin", "admin");
+//        User adam1 = new User(2, "adam", "admin");
+//        users1.add(admin);
+//        users1.add(adam);
 
-        UserServiceImpl userService = new UserServiceImpl(users1);
+        UserServiceImpl userService = new UserServiceImpl(new ArrayList<>(users));
         System.out.println(users.size());
         System.out.println(userService.get());
         //then
@@ -75,7 +75,8 @@ public class UserServiceTest {
         //expected
         Assert.assertEquals(users, usersFromTestClass);
 
-
     }
+
+
 
 }
